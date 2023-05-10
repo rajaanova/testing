@@ -2,26 +2,24 @@ package handler
 
 import (
 	"codebase/intve/service"
-	"encoding/json"
 	"net/http"
 )
 
-type routes struct {
-	service service.User
+type Routes struct {
+	Service service.Service
 }
 
-func (r *routes) getUser(w http.ResponseWriter, request *http.Request) {
+func (r *Routes) GetUser(w http.ResponseWriter, request *http.Request) {
 	id := request.FormValue("id")
-	if val, ok := r.service.GetUser(id); ok {
-		resBody, err := json.Marshal(val)
-		if err != nil {
-			//send error here
-		}
-		w.Write(resBody)
-		w.WriteHeader(http.StatusOK)
-	} else {
-		w.WriteHeader(http.StatusNotFound)
+	val, err := r.Service.GetUser(id)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
 	}
-	return
+	if val == nil {
+		w.WriteHeader(http.StatusNotFound)
+	} else {
+		w.WriteHeader(http.StatusOK)
+	}
 
 }

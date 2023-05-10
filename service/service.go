@@ -1,12 +1,12 @@
 package service
 
-type User struct {
-	id   string
-	name string
+import "codebase/intve/storage"
+
+type Service struct {
+	Store storage.MapStorage
 }
 
-func (u User) GetUser(id string) (interface{}, interface{}) {
-	userByUserId[]
-}
+func (s *Service) GetUser(id string) (*storage.User, error) {
+	return s.Store.GetUserById(id)
 
-var userByUserId = map[string]User{}
+}

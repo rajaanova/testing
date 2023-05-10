@@ -15,6 +15,10 @@ func init() {
 	//a = append(a, 1)
 	a[2] = 42
 	fmt.Println(b)
+	//adding few more changes
+	fmt.Println(a)
+
+	//778
 }
 func main() {
 	ma := map[string]*storage.User{}

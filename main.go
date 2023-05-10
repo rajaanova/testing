@@ -17,7 +17,9 @@ func init() {
 	fmt.Println(b)
 	//adding few more changes
 	fmt.Println(a)
+	fmt.Println("hello")
 
+	//some change 4
 	//778
 }
 func main() {

@@ -16,6 +16,8 @@ func init() {
 	a[2] = 42
 	fmt.Println(b)
 	fmt.Println("hello raj")
+	//adding few more changes
+	fmt.Println(a)
 }
 func main() {
 	ma := map[string]*storage.User{}

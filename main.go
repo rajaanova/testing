@@ -9,6 +9,7 @@ import (
 )
 
 func init() {
+
 	a := make([]int, 32)
 	b := a[1:16]
 	//a = append(a, 1)

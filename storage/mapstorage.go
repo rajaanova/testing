@@ -14,5 +14,5 @@ func (m *MapStorage) GetUserById(str string) (*User, error) {
 }
 
 func (m *MapStorage) AddUser(a string, name string) error {
-
+	return nil
 }

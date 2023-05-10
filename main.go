@@ -4,11 +4,16 @@ import (
 	"codebase/intve/handler"
 	"codebase/intve/service"
 	"codebase/intve/storage"
+	"fmt"
 	"net/http"
 )
 
 func init() {
-
+	a := make([]int, 32)
+	b := a[1:16]
+	//a = append(a, 1)
+	a[2] = 42
+	fmt.Println(b)
 }
 func main() {
 	ma := map[string]*storage.User{}
